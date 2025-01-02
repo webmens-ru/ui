@@ -1,0 +1,23 @@
+{
+    "name": "webmens-ru/ui",
+    "description": "",
+    "keywords": [
+        "yii2"
+    ],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "require": {
+        "yiisoft/yii2": "~2.0.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "wm\\yii\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
