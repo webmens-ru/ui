@@ -6,7 +6,7 @@ namespace wm\ui;
 /**
  *
  */
-class ButtonParamsPortal
+class ButtonParamsPortal extends Component
 {
     /**
      * @var string
@@ -44,5 +44,4 @@ class ButtonParamsPortal
         $this->url = $url;
         $this->updateOnCloseSlider = $updateOnCloseSlider;
     }
-
 }

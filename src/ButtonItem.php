@@ -5,7 +5,7 @@ namespace wm\ui;
 /**
  *
  */
-class ButtonItem
+class ButtonItem extends Component
 {
     /**
      * @var string

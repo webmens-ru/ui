@@ -2,7 +2,7 @@
 namespace wm\ui;
 
 
-class ButtonParamsMainForm
+class ButtonParamsMainForm extends Component
 {
     /**
      * @var string

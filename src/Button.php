@@ -5,14 +5,14 @@ namespace wm\ui;
 /**
  *
  */
-class Button
+class Button extends Component implements ButtonInterface
 {
     /**
      * @var string
      */
     public $title;
     /**
-     * @var ButtonParamsMainForm|ButtonParamsPortal
+     * @var ButtonParamsMainForm|ButtonParamsPortal|ButtonParamsPopup
      */
     public $params;
 
