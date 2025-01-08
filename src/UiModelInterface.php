@@ -59,11 +59,12 @@ interface UiModelInterface
      *        closeSliderOnSubmit: boolean,
      *        entity: string,
      *        menuId: int,
-     *          form: array{
-     *               mode: 'edit'|'view',
-     *               action: string,
-     *               canToggleMode: boolean,
-     *          }
+     *        form: array{
+     *            mode: 'edit'|'view',
+     *            action: string,
+     *            canToggleMode: boolean,
+     *            defaultValue?: mixed
+     *        }
      *      }
      *     },
      *     items?: mixed[]
@@ -124,6 +125,14 @@ interface UiModelInterface
      *     dataUrl: string,
      *     remoteMode: true,
      *     closeOnSelect: boolean
+     *   }
+     * }|array{
+     *   type: 'file',
+     *   name: string,
+     *   label: string,
+     *   fieldParams: array{
+     *     maxLimit: int,
+     *     extensions: string[]
      *   }
      * }>
      */
