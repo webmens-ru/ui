@@ -8,6 +8,7 @@ namespace wm\ui;
 interface UiModelInterface
 {
     /**
+     * @param mixed[]|null $defaultValue,
      * @return array{
      *     title: string,
      *     params: array{
@@ -48,11 +49,27 @@ interface UiModelInterface
      *        canToggleMode: boolean,
      *        menuId: int
      *      }
+     *     }|array{
+     *      type: 'openApplication',
+     *      iframeUrl: string,
+     *      path: 'mainCard',
+     *      updateOnCloseSlider: boolean,
+     *      bx24_width?: integer,
+     *      params: array{
+     *        closeSliderOnSubmit: boolean,
+     *        entity: string,
+     *        menuId: int,
+     *          form: array{
+     *               mode: 'edit'|'view',
+     *               action: string,
+     *               canToggleMode: boolean,
+     *          }
+     *      }
      *     },
      *     items?: mixed[]
      * }
      */
-    public static function getButtonAdd();
+    public static function getButtonAdd($defaultValue = []);
 
     /**
      * @return array{
@@ -80,25 +97,41 @@ interface UiModelInterface
     public function fields();
 
     /**
-     * @return array{
+     * @return list<array{
      *   type: 'input',
      *   name: string,
      *   label: string
-     * }[]|array{
+     * }|array{
      *   type: 'date',
      *   name: string,
      *   label: string,
-     *   fieldParams: array{
+     *   fieldParams?: array{
      *     withTime: boolean,
      *     format: string
      *   }
-     * }[]
+     * }|array{
+     *   type: 'select',
+     *   name: string,
+     *   label: string,
+     *   fieldParams: array{
+     *     data: mixed[]
+     *   }
+     * }|array{
+     *   type: 'select',
+     *   name: string,
+     *   label: string,
+     *   fieldParams: array{
+     *     dataUrl: string,
+     *     remoteMode: true,
+     *     closeOnSelect: boolean
+     *   }
+     * }>
      */
-    public function formFields(); //TODO
+    public static function getFormFields();
 
     /**
      * @param int $id
-     * @return array{
+     * @return list<array{
      *     label: string,
      *     handler: string,
      *     params: array{
@@ -106,7 +139,7 @@ interface UiModelInterface
      *      popup:mixed,
      *      output?: mixed
      *     }
-     * }|null
+     * }>|null
      */
     public static function getCardActions($id);
 
