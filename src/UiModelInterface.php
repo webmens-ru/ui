@@ -191,4 +191,81 @@ interface UiModelInterface
      * @throws? \Exception
      */
     public static function getHeader($models);
+
+    /**
+     * @param mixed[]|null $params
+     * @return list<array{
+     *     label: string,
+     *     handler: string,
+     *     params: array{
+     *         popup: array{
+     *              width:int,
+     *              height: int,
+     *              title: string,
+     *              body: array{
+     *                  form: array{
+     *                      fields: list<array{
+     *                         type: 'input',
+     *                         name: string,
+     *                         label: string
+     *                         }|array{
+     *                         type: 'date',
+     *                         name: string,
+     *                         label: string,
+     *                         fieldParams?: array{
+     *                           withTime: boolean,
+     *                           format: string
+     *                         }
+     *                       }|array{
+     *                         type: 'select',
+     *                         name: string,
+     *                         label: string,
+     *                         fieldParams: array{
+     *                           data: mixed[]
+     *                         }
+     *                       }|array{
+     *                         type: 'select',
+     *                         name: string,
+     *                         label: string,
+     *                         fieldParams: array{
+     *                           dataUrl: string,
+     *                           remoteMode: true,
+     *                           closeOnSelect: boolean
+     *                         }
+     *                       }|array{
+     *                         type: 'file',
+     *                         name: string,
+     *                         label: string,
+     *                         fieldParams: array{
+     *                           maxLimit: int,
+     *                           extensions: string[]
+     *                         }
+     *                       }>,
+     *                      validationRules: mixed,
+     *                      values?: mixed
+     *                  },
+     *              }|array{
+     *                  text: string
+     *              },
+     *              buttons: array{
+     *                  success: string,
+     *                  cancel: string
+     *              }
+     *         }
+     *     }
+     * }>
+     */
+    public static function getGridActions($params = null);
+
+    /**
+     * @return array{
+     *     title:string,
+     *     params: array{
+     *          type: 'openLink',
+     *          link: string
+     *     }
+     * }|null
+     */
+    public function getHelpButton();
+
 }
