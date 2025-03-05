@@ -8,7 +8,7 @@ namespace wm\ui;
 interface UiModelInterface
 {
     /**
-     * @param mixed[]|null $defaultValue,
+     * @param mixed[]|null $params,
      * @return array{
      *     title: string,
      *     params: array{
@@ -70,7 +70,7 @@ interface UiModelInterface
      *     items?: mixed[]
      * }
      */
-    public static function getButtonAdd($defaultValue = []);
+    public static function getButtonAdd($params = []);
 
     /**
      * @return array{
