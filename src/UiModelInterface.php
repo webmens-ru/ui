@@ -253,7 +253,7 @@ interface UiModelInterface
      *              }
      *         }
      *     }
-     * }>
+     * }>|null
      */
     public static function getGridActions($params = null);
 
@@ -266,6 +266,6 @@ interface UiModelInterface
      *     }
      * }|null
      */
-    public function getHelpButton();
+    public static function getHelpButton();
 
 }
