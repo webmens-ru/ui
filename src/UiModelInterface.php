@@ -167,7 +167,7 @@ interface UiModelInterface
      *         color?: 'primary'|'success'|'warning'|'danger'|'info',
      *         url: mixed
      *       }
-     *   }|array{
+     *   }[]|array{
      *      order: int,
      *      title: string,
      *      value: mixed,
@@ -182,7 +182,7 @@ interface UiModelInterface
      *        bx24_width: int,
      *        updateOnCloseSlider: boolean,
      *      }
-     *    }|array{
+     *    }[]|array{
      *      order: int,
      *      type: 'separator'
      *    }[]
